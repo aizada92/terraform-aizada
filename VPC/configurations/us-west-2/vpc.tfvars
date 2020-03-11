@@ -2,7 +2,7 @@
 environment                     =   	"oregon"
 region = "us-west-2"
 
-s3_bucket                       =	"terraform-class-andrii"
+s3_bucket                       =	"terraform-class-aizada"
 s3_folder_region                =	"us-east-1"
 
 # This is used for VPC CIDR BLOCK
