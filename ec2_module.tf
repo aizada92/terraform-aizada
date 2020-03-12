@@ -1,4 +1,0 @@
-module "wordpress" {
-  source = "./module"
-
-}
