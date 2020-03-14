@@ -1,6 +1,6 @@
 # Provide a region for VPC
 environment                     =   	"california"
-region = "us-west-1"
+region            =       "us-west-1"
 
 s3_bucket                       =	"terraform-class-aizada"
 s3_folder_region                =	"us-east-1"

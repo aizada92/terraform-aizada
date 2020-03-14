@@ -1,9 +1,12 @@
 # Provide a region for VPC
 environment                     =   	"virginia"
-
-
-
 region = "us-east-1"
+
+# Choose AZs to create subnets
+az1     =    "us-east-1a"
+az2   =    "us-east-1b"
+az3     =    "us-east-1c"
+
 
 s3_bucket                       =	"terraform-class-aizada"
 s3_folder_region                =	"us-east-1"
@@ -25,3 +28,6 @@ cidr_block3_private = "10.0.103.0/24"
 s3_folder_project               =   	"tower"
 s3_folder_type                  =   	"tools"
 s3_tfstate_file                 =   	"tower.tfstate"
+
+
+
