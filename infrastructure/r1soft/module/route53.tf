@@ -3,5 +3,5 @@ resource "aws_route53_record" "r1soft"         {
   name    = "backup.${var.domain}"
   type    = "A"
   ttl     = "60"
-  records = "${aws_instance.r1soft.public_ip}"
+  records = ["${aws_instance.r1soft.public_ip}"]
 }

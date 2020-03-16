@@ -2,10 +2,10 @@
 s3_bucket                       	=	"terraform-class-aizada"
 s3_folder_region                	=	"us-east-1"
 vpc_id		    	            	=	"vpc-0c2d36621d0a0f3d8"
-zone_id			                =	"Z2T1502YB519YD" 
-domain			                =	"theaizada.com"
-base_domain			        =	"theaizada.com"
-region 			                = 	"us-east-1"
+zone_id			                    =	"Z2T1502YB519YD" 
+domain			                    =	"theaizada.com"
+base_domain			                =	"theaizada.com"
+region 			                    = 	"us-east-1"
 s3_folder_project               	=   	"r1soft"  
 
 
