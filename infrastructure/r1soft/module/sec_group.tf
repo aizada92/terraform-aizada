@@ -1,23 +1,35 @@
-resource "aws_security_group" "allow_ssh_and_r1soft" {
-  name        = "allow_ssh_and_r1soft"
-  description = "Allow SSH and r1soft"
-  vpc_id      = "${var.vpc_id}"
-
-
-  egress {
-    from_port   = 0
-    to_port     = 65535
+resource "aws_security_group" "allow_tls" {
+  name        = "allow_tls"
+  description = "Allow TLS inbound traffic"
+  vpc_id      = "vpc-060f894af717ea1a7"
+  ingress {
+    description = "TLS from VPC"
+    from_port   = 443
+    to_port     = 443
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
-
-
-resource "aws_security_group_rule" "allow_all_ingress" {
-  type            = "ingress"
-  from_port       = 0
-  to_port         = 65535
-  protocol        = "tcp"
-  cidr_blocks     = ["0.0.0.0/0"]                            
-  security_group_id = "${aws_security_group.allow_ssh_and_r1soft.id}"
+  ingress {
+    description = "TLS from VPC"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    description = "TLS from VPC"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "allow_tls"
+  }
 }
