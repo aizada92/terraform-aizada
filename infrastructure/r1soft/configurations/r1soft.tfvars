@@ -1,7 +1,7 @@
 # Below code is used to set backend only
 s3_bucket                       	=	"terraform-class-aizada"
 s3_folder_region                	=	"us-east-1"
-vpc_id		    	            	=	"vpc-0c2d36621d0a0f3d8"
+vpc_id		    	            	=	"vpc-060f894af717ea1a7"
 zone_id			                    =	"Z2T1502YB519YD" 
 domain			                    =	"theaizada.com"
 base_domain			                =	"theaizada.com"

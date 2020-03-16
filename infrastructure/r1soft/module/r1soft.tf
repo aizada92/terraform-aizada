@@ -62,7 +62,6 @@ resource "aws_instance" "r1soft"         {
 	"sudo cp /tmp/r1soft.repo /etc/yum.repos.d/",          
         "sudo  yum install r1soft-cdp-enterprise-server -y",
         "sudo r1soft-setup --user admin --pass p@ssw4rd --http-port 80",
-        "sudo r1soft-setup --user admin --pass p@ssw4rd --http-port 443",
         "sudo systemctl restart cdp-server",
     ]
   }
