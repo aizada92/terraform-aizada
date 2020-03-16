@@ -15,17 +15,12 @@ resource "aws_security_group" "allow_ssh_and_r1soft" {
 resource "aws_security_group_rule" "allow_all_ingress" {
 name          = "allow_ssh_and_r1soft"
 description =  "Allow Ingress"
-vpc_id      = "${var.vpc_id}"
 
 
-egress {
+ egress {
     from_port   = 0
     to_port     = 65535
-    protocol    = "tcp"
+    protocol    = 0
     cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "allow_tls"
   }
 }
