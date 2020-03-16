@@ -14,17 +14,9 @@ resource "aws_security_group" "allow_ssh_and_r1soft" {
 
 resource "aws_security_group_rule" "allow_all_ingress" {
 name          = "allow_ssh_and_r1soft"
-description = "Allow Ingress"
+description =  "Allow Ingress"
 vpc_id      = "${var.vpc_id}"
 
-ingress {
-    description = "TLS from VPC"
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = "${aws_vpc.main.cidr_block}"
-
-  }
 
 egress {
     from_port   = 0
