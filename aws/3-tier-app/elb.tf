@@ -1,7 +1,7 @@
 # Create a new load balancer
 resource "aws_elb" "bar" {
   name               = "wordpress"
-  subnets =                    ["${data.terraform_remote_state.dev.Subnet1}", 
+  subnets       =            [ "${data.terraform_remote_state.dev.Subnet1}", 
                                "${data.terraform_remote_state.dev.Subnet2}", 
                                "${data.terraform_remote_state.dev.Subnet3}"]
 
@@ -23,7 +23,7 @@ resource "aws_elb" "bar" {
     interval            = 30
   }
 
-  instances                   = ["i-0112b63712ab66577"]
+  instances                   = ["i-0af43bf51a65cfc03"]
   cross_zone_load_balancing   = true
   idle_timeout                = 400
   connection_draining         = true
@@ -34,7 +34,8 @@ resource "aws_elb" "bar" {
   }
 }
 
-resource "aws_autoscaling_attachment" "wordpress" {
-  autoscaling_group_name = "wordpress-asg-20200314214356454500000002"
-  elb                    = "wordpress"
-}
+# Create a new load balancer attachment
+# resource "aws_autoscaling_attachment" "wordpress" {
+#   autoscaling_group_name = "${aws_autoscaling_group.wordpress.id}"
+#   elb                    = "${aws_elb.wordpress.id}"
+# }

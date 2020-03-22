@@ -6,3 +6,4 @@
   cd repo/3-tier-app
   terraform init 
   terraform apply
+  dont forget change id of elb to running instence on ec2 
